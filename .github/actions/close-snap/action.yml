@@ -17,7 +17,8 @@ inputs:
   snapcraft-channel:
     required: true
     description: |
-      The Snapcraft channel to use.
+      The Snapcraft channel to use. Defaults to `stable`.
+    default: stable
 
 runs:
   using: composite
