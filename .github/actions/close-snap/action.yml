@@ -34,7 +34,7 @@ runs:
       echo "::set-output name=snap-name::${GITHUB_REPOSITORY#*/}"
 
   - shell: bash
-    env:
-      SNAPCRAFT_STORE_CREDENTIALS: ${{ inputs.snapcraft-token }}
+    #    env:
+    #      SNAPCRAFT_STORE_CREDENTIALS: ${{ inputs.snapcraft-token }}
     run: |
       snapcraft close "${{ inputs.snap-name || steps.get-snap-name.snap-name }}" "${{ inputs.snap-channel }}"
