@@ -29,9 +29,9 @@ runs:
 
   - id: get-snap-name
     shell: bash
+    if: ${{ ! inputs.snap-name }}
     run: |
-      env
-      echo "::set-output name=snap-name ${GITHUB_REPO#*/}"
+      echo "::set-output name=snap-name::${GITHUB_REPOSITORY#*/}"
 
   - shell: bash
     env:
