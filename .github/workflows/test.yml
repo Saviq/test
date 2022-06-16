@@ -1,0 +1,12 @@
+name: Foo
+on: push
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: ./.github/actions/close-snap
+      with:
+        snapcraft-token: foo
+        snap-channel: bar
