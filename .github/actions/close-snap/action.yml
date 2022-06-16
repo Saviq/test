@@ -26,7 +26,7 @@ runs:
     run: |
       sudo snap install snapcraft --classic --channel ${{ inputs.snapcraft-channel }}
 
-  - id: get_snap_name
+  - id: get-snap-name
     shell: bash
     run: |
       env
@@ -36,4 +36,4 @@ runs:
     env:
       SNAPCRAFT_STORE_CREDENTIALS: ${{ inputs.snapcraft-token }}
     run: |
-      snapcraft close "${{ inputs.snap-name ||  }}" "${{ inputs.snap-channel }}"
+      snapcraft close "${{ inputs.snap-name || steps.get-snap-name.snap-name }}" "${{ inputs.snap-channel }}"
